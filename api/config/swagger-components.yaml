@@ -1,0 +1,47 @@
+components:
+  schemas:
+    GeneralError:
+      type: object
+      properties:
+        data:
+          type: any
+        error:
+          type: string
+      example:
+        data: null
+        error: Something went wrong.
+    NotFoundError:
+      type: object
+      properties:
+        data:
+          type: any
+        error:
+          type: string
+      example:
+        data: null
+        error: Requested item not found.
+    BadRequestError:
+      type: object
+      properties:
+        data:
+          type: any
+        error:
+          type: string
+      example:
+        data: null
+        error: First name should not be empty.
+    Task:
+      type: object
+      properties:
+        title:
+          type: string
+          example: Exam
+        status:
+          type: string
+          enum:
+            - 'To Do'
+            - 'Done'
+          example: To Do
+        description:
+          type: string
+          example: class test

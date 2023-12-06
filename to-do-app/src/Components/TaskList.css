@@ -1,0 +1,23 @@
+.main {
+  background-color: #494849;
+  height: fit-content;
+  width: 800px;
+  color: #fff;
+  padding: 10px;
+}
+
+.outPut {
+  background-color: rgba(135, 123, 123, 0.7);
+  width: auto;
+  height: auto;
+  margin-bottom: 10px;
+  color: rgba(242, 255, 248, 0.805);
+  padding: 5px;
+}
+.status {
+  padding: 2px;
+  border-radius: 3px;
+}
+.error {
+  color: red;
+}
