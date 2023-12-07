@@ -2,7 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./TaskList.css";
 import $ from "jquery";
 import { Button } from "react-bootstrap";
-import { Trash, CheckSquareFill, PlusSquareFill } from "react-bootstrap-icons";
+import {
+  Trash,
+  CheckSquareFill,
+  PlusSquareFill,
+  FunnelFill,
+  XSquareFill,
+} from "react-bootstrap-icons";
 
 function TaskList() {
   const [data, setData] = useState(null);
@@ -13,13 +19,12 @@ function TaskList() {
     description: "",
   });
 
-  const fetchData = () => {
+  const fetchData = (search = "") => {
     $.ajax({
-      url: "http://localhost:4000/v1/tasks",
+      url: `http://localhost:4000/v1/tasks?search=${search}`,
       method: "GET",
       dataType: "json",
       success: (result) => {
-        console.log(result.data);
         setData(result.data);
       },
       error: (xhr, status, error) => {
@@ -139,6 +144,27 @@ function TaskList() {
           </Button>
         </div>
       </div>
+      <div className="d-flex d-inline mb-2">
+        <div className="mx-3 ">
+          <Button
+            variant="success"
+            onClick={() => {
+              fetchData("To Do");
+            }}
+          >
+            <FunnelFill /> ToDo
+          </Button>
+        </div>
+        <div>
+          <Button
+            onClick={() => {
+              fetchData("Done");
+            }}
+          >
+            <FunnelFill /> Done
+          </Button>
+        </div>
+      </div>
 
       {data &&
         data.map((dat) => (
@@ -160,6 +186,14 @@ function TaskList() {
                   onClick={() => handleUpdateStatus(dat._id, "Done")}
                 >
                   <CheckSquareFill />
+                </button>
+              </div>
+              <div className="mx-3">
+                <button
+                  class="btn btn-dark"
+                  onClick={() => handleUpdateStatus(dat._id, "To Do")}
+                >
+                  <XSquareFill />
                 </button>
               </div>
               <div

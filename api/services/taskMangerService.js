@@ -6,14 +6,13 @@ export default class TaskService {
   }
 
   static async getTasks(search = '') {
-    // Define a query object to perform a search on all fields
-    const searchQuery = {
-      $or: [
-        { status: { $regex: search, $options: 'i' } }, // Case-insensitive search in the 'name' field
-      ],
-    };
+    const tasks = await Task.find();
 
-    return Task.find(searchQuery);
+    return tasks.filter((tasks) => {
+      const searchToLower = search.toLocaleLowerCase();
+      const status = String(tasks.status).toLocaleLowerCase();
+      return status.includes(searchToLower);
+    });
   }
 
   static async getTaskById(taskId) {
