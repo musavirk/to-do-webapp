@@ -1,4 +1,4 @@
-// jQuery code goes here
+
 $(document).ready(function () {
   // Define your API URL
   const apiUrl = "http://localhost:4000/v1/tasks";
