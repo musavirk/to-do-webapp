@@ -1,0 +1,84 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input {
+  width: auto;
+  height: 30px;
+}
+input:focus {
+  outline: none;
+}
+.main {
+  background-color: #494849;
+  height: fit-content;
+  width: 800px;
+  color: #fff;
+  padding: 10px;
+}
+.todo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.todo-wrapper input {
+  border-radius: 5px;
+}
+.todo-wrapper button {
+  border-radius: 5px;
+  background-color: blue;
+  color: #fff;
+  height: 30px;
+}
+.sort-btn {
+  display: flex;
+  display: inline;
+}
+.sort-btn button {
+  height: 30px;
+  color: white;
+  border-radius: 5px;
+  background-color: red;
+}
+
+.outPut {
+  background-color: rgba(135, 123, 123, 0.7);
+  width: auto;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: rgba(242, 255, 248, 0.805);
+  padding: 5px;
+  text-align: center;
+}
+.out-btn {
+  display: flex;
+  display: inline;
+}
+.out-btn button {
+  color: #fff;
+}
+.set-ToDo {
+  background-color: blue;
+}
+.set-Done {
+  background-color: rgb(0, 255, 110);
+}
+.delete {
+  background-color: rgb(255, 0, 21);
+}
+#status {
+  padding: 2px;
+  border-radius: 3px;
+  color: #fff;
+}
+#filterDone {
+  background-color: green;
+  color: #fff;
+}
+#filterToDo {
+  background-color: rgb(128, 0, 49);
+  color: #fff;
+}

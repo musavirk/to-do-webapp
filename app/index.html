@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task List</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h1>My To-do's</h1>
+      <div class="todo-wrapper">
+        <form id="taskForm">
+          <label for="title">Task:</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Enter Task title "
+            required
+          />
+
+          <label for="description">Description:</label>
+          <input
+            type="text"
+            id="description"
+            name="description"
+            placeholder="Enter Task description "
+            required
+          />
+          <button id="addTask" type="submit">Add Task</button>
+        </form>
+      </div>
+      <div class="sort-btn">
+        <button id="filterToDo">ToDo</button>
+        <button id="filterDone">Done</button>
+      </div>
+      <div id="taskList"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
